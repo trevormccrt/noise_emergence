@@ -24,10 +24,10 @@ def test_ragged():
     N = 30
     k = 2
 
-    functions = np.random.binomial(1, 0.5, (batch_size, N, 1 << k))
-    connections = np.random.randint(0, N, (batch_size, N, k))
-    used_connectivity = np.random.binomial(1, 0.5, (batch_size, N, k))
-    init_states = np.random.binomial(1, 0.5, (batch_size, N))
+    functions = np.random.binomial(1, 0.5, (batch_size, N, 1 << k)).astype(np.bool_)
+    connections = np.random.randint(0, N, (batch_size, N, k)).astype(np.uint8)
+    used_connectivity = np.random.binomial(1, 0.5, (batch_size, N, k)).astype(np.bool_)
+    init_states = np.random.binomial(1, 0.5, (batch_size, N)).astype(np.bool_)
     cycle_lengths, _, num_left, steps_used, _ = limit_cycles.measure_limit_cycle_lengths(init_states, functions,
                                                                                          connections,
                                                                                          used_connections=used_connectivity)
@@ -38,9 +38,9 @@ def test_complex_cycle_lengths():
     batch_size = 100
     N = 30
     k = 2
-    functions = np.random.binomial(1, 0.5, (batch_size, N, 1<<k))
-    connections = np.random.randint(0, N, (batch_size, N, k))
-    init_states = np.random.binomial(1, 0.5, (batch_size, N))
+    functions = np.random.binomial(1, 0.5, (batch_size, N, 1<<k)).astype(np.bool_)
+    connections = np.random.randint(0, N, (batch_size, N, k)).astype(np.uint8)
+    init_states = np.random.binomial(1, 0.5, (batch_size, N)).astype(np.bool_)
     cycle_lengths, _, num_left, steps_used, _ = limit_cycles.measure_limit_cycle_lengths(init_states, functions, connections)
     assert not num_left
     n_sim_timesteps = int(1.5 * steps_used)
@@ -65,9 +65,9 @@ def test_found_cycle_validity():
     batch_size = 100
     N = 30
     k = 2
-    functions = np.random.binomial(1, 0.5, (batch_size, N, 1<<k))
-    connections = np.random.randint(0, N, (batch_size, N, k))
-    init_states = np.random.binomial(1, 0.5, (batch_size, N))
+    functions = np.random.binomial(1, 0.5, (batch_size, N, 1<<k)).astype(np.bool_)
+    connections = np.random.randint(0, N, (batch_size, N, k)).astype(np.uint8)
+    init_states = np.random.binomial(1, 0.5, (batch_size, N)).astype(np.bool_)
     cycle_lengths, cycle_start_end, num_left, steps_used, cycle_data = limit_cycles.measure_limit_cycle_lengths(init_states, functions, connections)
     assert np.all(cycle_lengths == [x.shape[0] for x in cycle_data])
     for function, connection, cycle, cycle_length in zip(functions, connections, cycle_data, cycle_lengths):
