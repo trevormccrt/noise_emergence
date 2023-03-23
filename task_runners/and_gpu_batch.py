@@ -18,8 +18,7 @@ max_k = 3
 n_generations = 50000
 n_memory_timesteps = 10
 
-a = os.getenv("DATA_DIR")
-out_dir = os.path.join(a, "boolean_network_data/and_evolution_results/{}".format(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')))
+out_dir = os.path.join(os.getenv("DATA_DIR"), "boolean_network_data/and_evolution_results/{}".format(datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')))
 os.makedirs(out_dir, exist_ok=False)
 checkpointint_dir = os.path.join(out_dir, "checkpoint_data/")
 os.makedirs(checkpointint_dir, exist_ok=False)
