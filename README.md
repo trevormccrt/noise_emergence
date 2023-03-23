@@ -1,4 +1,3 @@
-# noise_emergence
 Code to accompany the paper "Emergent effecient error correction and modularity in noisy dynamic systems"
 
 # Data
