@@ -1,8 +1,9 @@
-Code to accompany the paper "Emergent effecient error correction and modularity in noisy dynamic systems"
+Code to accompany the paper ["Emergent effecient error correction and modularity in noisy dynamic systems"](https://arxiv.org/abs/2303.14448#)
+
 
 # Data
 
-The data that comes with this paper can be downloaded [here](https://drive.google.com/file/d/1tagEbX7_RdUgLQtR0kP6Eav3DKt8owwd/view?usp=share_link)
+The data that comes with this paper can be downloaded 
 
 # Playing with my data
 
