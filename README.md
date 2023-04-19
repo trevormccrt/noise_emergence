@@ -3,7 +3,7 @@ Code to accompany the paper ["Emergent effecient error correction and modularity
 
 # Data
 
-The data that comes with this paper can be downloaded 
+The data that comes with this paper can be downloaded [here](https://drive.google.com/file/d/1tagEbX7_RdUgLQtR0kP6Eav3DKt8owwd/view?usp=share_link)  
 
 # Playing with my data
 
